@@ -3,14 +3,14 @@ import {
   DisclosureButton,
   DisclosurePanel,
   Menu,
+  MenuItem,
   MenuButton,
   MenuItems,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavLinks from "./nav-links";
-import { signOut } from "@/auth";
-import { auth } from "@/auth";
 import Image from "next/image";
+import { auth } from "@/auth";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
@@ -87,21 +87,15 @@ export default async function Navbar({
                 transition
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
-                <Link href="/products/profile">Your Profile</Link>
-
-                <Link href="/products/profile/cart">My Cart</Link>
-                <Link href="/products/profile/wishes">My Wishlist</Link>
-
-                <form
-                  action={async () => {
-                    "use server";
-                    await signOut();
-                  }}
-                >
-                  <button type="submit" onClick={() => signOut()}>
-                    Sign Out
-                  </button>
-                </form>
+                <MenuItem>
+                  <Link href="/products/profile">Your Profile</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/products/profile/cart">My Cart</Link>
+                </MenuItem>
+                <MenuItem>
+                  <Link href="/products/profile/wishes">My Wishlist</Link>
+                </MenuItem>
               </MenuItems>
             </Menu>
           </div>

@@ -116,7 +116,7 @@ export default async function Navbar({
           </div>
         </div>
       </div>
-      <Separator className="w-full my-4 border border-neutral-950" />
+      <Separator className="w-full my-4 border border-base-950" />
       <DisclosurePanel className="sm:hidden">
         <div className="space-y-1 px-2 pt-2 pb-3">
           <NavLinks />

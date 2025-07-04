@@ -88,17 +88,15 @@ export default function ProductDetails({ product }: { product: BaseDetails }) {
             <p className="my-4 py-2">
               <strong>Descubre el descuento que tenemos para ti</strong>
             </p>
-            <div className="mx-auto">
-              <ScratchToReveal
-                width={150}
-                height={150}
-                minScratchPercentage={70}
-                className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
-                gradientColors={["#A97CF8", "#F38CB8", "#FDCC92"]}
-              >
-                <p className="text-9xl">{product.discountPercentage}%</p>
-              </ScratchToReveal>
-            </div>
+            <ScratchToReveal
+              width={150}
+              height={150}
+              minScratchPercentage={70}
+              className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
+              gradientColors={["#A97CF8", "#F38CB8", "#FDCC92"]}
+            >
+              <p>% {product.discountPercentage}%</p>
+            </ScratchToReveal>
             {/* Tags */}
             {product.tags.length > 0 && (
               <div className="mt-6">

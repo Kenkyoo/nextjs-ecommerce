@@ -20,11 +20,11 @@ export default function CartProducts() {
       {products.length === 0 ? (
         <div>No hay productos en el carrito</div>
       ) : (
-        <ul role="list" className="-my-6 divide-y divide-gray-200">
+        <ul role="list" className="-my-6 divide-y divide-base">
           <AnimatedList>
             {products.map((item: { id: number | string; product: Product }) => (
               <li key={item.id} className="flex py-6">
-                <div className="size-24 shrink-0 overflow-hidden rounded-md border border-gray-200">
+                <div className="size-24 shrink-0 overflow-hidden rounded-md border border-base">
                   <Image
                     height={100}
                     width={100}
@@ -36,7 +36,7 @@ export default function CartProducts() {
 
                 <div className="ml-4 flex flex-1 flex-col">
                   <div>
-                    <div className="flex justify-between text-base font-medium text-gray-900">
+                    <div className="flex justify-between text-base font-medium text-base">
                       <h3>
                         <Link href={`/products/${item.product.id}`}>
                           {item.product.title}
@@ -44,12 +44,12 @@ export default function CartProducts() {
                       </h3>
                       <p className="ml-4">{item.product.price}</p>
                     </div>
-                    <p className="mt-1 text-sm text-gray-500">
+                    <p className="mt-1 text-sm text-base">
                       {item.product.category}
                     </p>
                   </div>
                   <div className="flex flex-1 items-end justify-between text-sm">
-                    <p className="text-gray-500">Qty {item.product.brand}</p>
+                    <p className="text-base">Qty {item.product.brand}</p>
 
                     <div className="flex">
                       <button

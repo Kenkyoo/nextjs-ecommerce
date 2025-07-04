@@ -9,7 +9,7 @@ export default function ProductOverviewDetails({
   product: Product;
 }) {
   return (
-    <div className="relative flex w-full items-center overflow-hidden bg-white px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
+    <div className="relative flex w-full items-center overflow-hidden px-4 pt-14 pb-8 shadow-2xl sm:px-6 sm:pt-8 md:p-6 lg:p-8">
       <div className="grid w-full grid-cols-1 items-start gap-x-6 gap-y-8 sm:grid-cols-12 lg:gap-x-8">
         <Image
           height={200}
@@ -19,16 +19,14 @@ export default function ProductOverviewDetails({
           className="aspect-2/3 w-full rounded-lg bg-gray-100 object-cover sm:col-span-4 lg:col-span-5"
         />
         <div className="sm:col-span-8 lg:col-span-7">
-          <h2 className="text-2xl font-bold text-gray-900 sm:pr-12">
-            {product.title}
-          </h2>
+          <h2 className="text-2xl font-bold sm:pr-12">{product.title}</h2>
 
           <section aria-labelledby="information-heading" className="mt-2">
             <h3 id="information-heading" className="sr-only">
               Product information
             </h3>
 
-            <p className="text-2xl text-gray-900">{product.price}</p>
+            <p className="text-2xl">{product.price}</p>
 
             {/* Reviews */}
             <div className="mt-6">

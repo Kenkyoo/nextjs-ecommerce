@@ -5,6 +5,7 @@ import { StarIcon } from "@heroicons/react/20/solid";
 import Image from "next/image";
 import { addToCart } from "@/hooks/addToCart";
 import { ScratchToReveal } from "@/components/magicui/scratch-to-reveal";
+import { Badge } from "@/components/ui/badge";
 
 export default function ProductDetails({ product }: { product: BaseDetails }) {
   return (
@@ -37,11 +38,9 @@ export default function ProductDetails({ product }: { product: BaseDetails }) {
 
           {/* Info */}
           <div className="mt-10 lg:mt-0">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {product.title}
-            </h1>
+            <h1 className="text-3xl font-bold text-base">{product.title}</h1>
 
-            <p className="mt-4 text-xl text-gray-900">${product.price}</p>
+            <p className="mt-4 text-xl text-base">${product.price}</p>
 
             {/* Rating */}
             <div className="mt-4 flex items-center">
@@ -63,14 +62,12 @@ export default function ProductDetails({ product }: { product: BaseDetails }) {
 
             {/* Descripción */}
             <div className="mt-6">
-              <h2 className="text-sm font-medium text-gray-900">Descripción</h2>
-              <p className="mt-2 text-sm text-gray-600">
-                {product.description}
-              </p>
+              <h2 className="text-sm font-medium text-base">Descripción</h2>
+              <p className="mt-2 text-sm text-base">{product.description}</p>
             </div>
 
             {/* Información adicional */}
-            <div className="mt-6 space-y-1 text-sm text-gray-600">
+            <div className="mt-6 space-y-1 text-sm text-base">
               <p>
                 <strong>Categoría:</strong> {product.category}
               </p>
@@ -88,26 +85,28 @@ export default function ProductDetails({ product }: { product: BaseDetails }) {
                 <strong>Política de devolución:</strong> {product.returnPolicy}
               </p>
             </div>
-            <p>
+            <p className="my-4 py-2">
               <strong>Descubre el descuento que tenemos para ti</strong>
             </p>
-            <ScratchToReveal
-              width={150}
-              height={150}
-              minScratchPercentage={70}
-              className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
-              gradientColors={["#A97CF8", "#F38CB8", "#FDCC92"]}
-            >
-              <p className="text-9xl">{product.discountPercentage}%</p>
-            </ScratchToReveal>
+            <div className="mx-auto">
+              <ScratchToReveal
+                width={150}
+                height={150}
+                minScratchPercentage={70}
+                className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
+                gradientColors={["#A97CF8", "#F38CB8", "#FDCC92"]}
+              >
+                <p className="text-9xl">{product.discountPercentage}%</p>
+              </ScratchToReveal>
+            </div>
             {/* Tags */}
             {product.tags.length > 0 && (
               <div className="mt-6">
-                <h3 className="text-sm font-medium text-gray-900">Tags</h3>
-                <ul className="mt-2 flex flex-wrap gap-2 text-sm text-gray-500">
+                <h3 className="text-sm font-medium text-base">Tags</h3>
+                <ul className="mt-2 flex flex-wrap gap-2 text-sm text-base">
                   {product.tags.map((tag, idx) => (
-                    <li key={idx} className="bg-gray-100 px-2 py-1 rounded">
-                      {tag}
+                    <li key={idx} className="bg-base px-2 py-1 rounded">
+                      <Badge variant="destructive">{tag}</Badge>
                     </li>
                   ))}
                 </ul>

@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Disclosure,
   DisclosureButton,
@@ -11,7 +9,7 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavLinks from "./nav-links";
-import { signOut } from "next-auth/react";
+import { signOut } from "@/auth";
 import { auth } from "@/auth";
 import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -131,14 +129,22 @@ export default async function Navbar({
 
                 <MenuItem>
                   {({ active }) => (
-                    <button
-                      onClick={() => signOut()}
-                      className={`block w-full text-left px-4 py-2 text-sm ${
-                        active ? "bg-gray-100" : "text-base"
-                      }`}
+                    <form
+                      action={async () => {
+                        "use server";
+                        await signOut();
+                      }}
                     >
-                      Sign Out
-                    </button>
+                      <button
+                        type="submit"
+                        onClick={() => signOut()}
+                        className={`block w-full text-left px-4 py-2 text-sm ${
+                          active ? "bg-gray-100" : "text-base"
+                        }`}
+                      >
+                        Sign Out
+                      </button>
+                    </form>
                   )}
                 </MenuItem>
               </MenuItems>

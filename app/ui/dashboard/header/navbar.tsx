@@ -88,65 +88,21 @@ export default async function Navbar({
                 transition
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md  py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      href="/products/profile"
-                      className={`block px-4 py-2 text-sm ${
-                        active ? "bg-gray-100" : "text-base"
-                      }`}
-                    >
-                      Your Profile
-                    </Link>
-                  )}
-                </MenuItem>
+                <Link href="/products/profile">Your Profile</Link>
 
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      href="/products/profile/cart"
-                      className={`block px-4 py-2 text-sm ${
-                        active ? "bg-gray-100" : "text-base"
-                      }`}
-                    >
-                      My Cart
-                    </Link>
-                  )}
-                </MenuItem>
+                <Link href="/products/profile/cart">My Cart</Link>
+                <Link href="/products/profile/wishes">My Wishlist</Link>
 
-                <MenuItem>
-                  {({ active }) => (
-                    <Link
-                      href="/products/profile/wishes"
-                      className={`block px-4 py-2 text-sm ${
-                        active ? "bg-gray-100" : "text-base"
-                      }`}
-                    >
-                      My Wishlist
-                    </Link>
-                  )}
-                </MenuItem>
-
-                <MenuItem>
-                  {({ active }) => (
-                    <form
-                      action={async () => {
-                        "use server";
-                        await signOut();
-                      }}
-                    >
-                      <button
-                        type="submit"
-                        onClick={() => signOut()}
-                        className={`block w-full text-left px-4 py-2 text-sm ${
-                          active ? "bg-gray-100" : "text-base"
-                        }`}
-                      >
-                        Sign Out
-                      </button>
-                    </form>
-                  )}
-                </MenuItem>
+                <form
+                  action={async () => {
+                    "use server";
+                    await signOut();
+                  }}
+                >
+                  <button type="submit" onClick={() => signOut()}>
+                    Sign Out
+                  </button>
+                </form>
               </MenuItems>
             </Menu>
           </div>

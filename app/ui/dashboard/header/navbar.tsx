@@ -27,7 +27,7 @@ export default async function Navbar({
     <Disclosure as="nav" className="bg-base-800">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
+          <div className="absolute inset-y-0 left-0 flex sm:hidden">
             {/* Mobile menu button*/}
             <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md p-2 hover:bg-gray-700  focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset">
               <span className="absolute -inset-0.5" />
@@ -59,8 +59,6 @@ export default async function Navbar({
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {children}
-            <ModeToggle />
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
@@ -113,6 +111,8 @@ export default async function Navbar({
                 </MenuItem>
               </MenuItems>
             </Menu>
+            {children}
+            <ModeToggle />
           </div>
         </div>
       </div>

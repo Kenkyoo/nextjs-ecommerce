@@ -10,7 +10,6 @@ import {
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import NavLinks from "./nav-links";
 import { signOut } from "next-auth/react";
-import { Button } from "@/components/ui/button";
 import { auth } from "@/auth";
 import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";

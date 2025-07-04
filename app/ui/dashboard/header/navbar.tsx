@@ -16,6 +16,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import { ModeToggle } from "@/components/toogle-mode";
 
 export default async function Navbar({
   children,
@@ -61,6 +62,7 @@ export default async function Navbar({
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
             {children}
+            <ModeToggle />
             {/* Profile dropdown */}
             <Menu as="div" className="relative ml-3">
               <div>
@@ -77,41 +79,66 @@ export default async function Navbar({
                     />
                   ) : (
                     <Avatar>
-                      <AvatarFallback>CN</AvatarFallback>
+                      <AvatarFallback>My</AvatarFallback>
                     </Avatar>
                   )}
                 </MenuButton>
               </div>
+
               <MenuItems
                 transition
                 className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
               >
                 <MenuItem>
-                  <Link
-                    href="/products/profile"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    Your Profile
-                  </Link>
+                  {({ active }) => (
+                    <Link
+                      href="/products/profile"
+                      className={`block px-4 py-2 text-sm ${
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                      }`}
+                    >
+                      Your Profile
+                    </Link>
+                  )}
                 </MenuItem>
+
                 <MenuItem>
-                  <Link
-                    href="/products/profile/cart"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    My Cart
-                  </Link>
+                  {({ active }) => (
+                    <Link
+                      href="/products/profile/cart"
+                      className={`block px-4 py-2 text-sm ${
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                      }`}
+                    >
+                      My Cart
+                    </Link>
+                  )}
                 </MenuItem>
+
                 <MenuItem>
-                  <Link
-                    href="/products/profile/wishes"
-                    className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
-                  >
-                    My WishesList
-                  </Link>
+                  {({ active }) => (
+                    <Link
+                      href="/products/profile/wishes"
+                      className={`block px-4 py-2 text-sm ${
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                      }`}
+                    >
+                      My Wishlist
+                    </Link>
+                  )}
                 </MenuItem>
+
                 <MenuItem>
-                  <Button onClick={() => signOut()}>Sign Out</Button>
+                  {({ active }) => (
+                    <button
+                      onClick={() => signOut()}
+                      className={`block w-full text-left px-4 py-2 text-sm ${
+                        active ? "bg-gray-100 text-gray-900" : "text-gray-700"
+                      }`}
+                    >
+                      Sign Out
+                    </button>
+                  )}
                 </MenuItem>
               </MenuItems>
             </Menu>

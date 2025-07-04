@@ -101,9 +101,11 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-@theme inline {
-  --animate-scroll: scroll var(--animation-duration, 40s)
-    var(--animation-direction, forwards) linear infinite;
+@layer inline {
+  :root {
+    --animate-scroll: scroll var(--animation-duration, 40s)
+      var(--animation-direction, forwards) linear infinite;
+  }
 
   @keyframes scroll {
     to {
@@ -111,22 +113,24 @@ input[type="number"]::-webkit-outer-spin-button {
     }
   }
   @keyframes meteor {
-  0% {
-    transform: rotate(var(--angle)) translateX(0);
-    opacity: 1;
+    0% {
+      transform: rotate(var(--angle)) translateX(0);
+      opacity: 1;
     }
-  70% {
-    opacity: 1;
+    70% {
+      opacity: 1;
     }
-  100% {
-    transform: rotate(var(--angle)) translateX(-500px);
-    opacity: 0;
+    100% {
+      transform: rotate(var(--angle)) translateX(-500px);
+      opacity: 0;
     }
   }
 }
 
-@theme inline {
-  --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+@layer inline {
+  :root {
+    --animate-spotlight: spotlight 2s ease 0.75s 1 forwards;
+  }
 }
 
 @keyframes spotlight {

@@ -5,8 +5,8 @@ import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/theme-provider";
 
 export const metadata: Metadata = {
-  title: "Acme Dashboard",
-  description: "The official Next.js Course Dashboard, built with App Router.",
+  title: "Acme Ecommerce",
+  description: "The official Next.js Ecommerce, built with App Router.",
   metadataBase: new URL("https://next-learn-dashboard.vercel.sh"),
 };
 

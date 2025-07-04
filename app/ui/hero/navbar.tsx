@@ -3,7 +3,7 @@ import { WarpBackground } from "@/components/magicui/warp-background";
 
 const Navbar = () => {
   return (
-    <nav className="hidden md:block flex w-full items-center justify-between border-t border-b border-neutral-200 px-4 py-4 dark:border-neutral-800">
+    <nav className="hidden md:flex w-full items-center justify-between border-t border-b border-neutral-200 px-4 py-4 dark:border-neutral-800">
       <div className="flex items-center gap-2">
         <div className="size-7 rounded-full bg-gradient-to-br from-violet-500 to-pink-500" />
         <WarpBackground>

@@ -13,7 +13,7 @@ export default async function LatestSmartPhones() {
     };
 
   return (
-    <div className="vh-90 min-h-screen py-2 sm:py-4 lg:py-6">
+    <div className="hidden md:block vh-90 min-h-screen py-2 sm:py-4 lg:py-6">
       <div className="mx-auto max-w-screen-2xl px-2 md:px-4">
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
           <div className="group relative flex h-48 overflow-hidden rounded-lg bg-dark shadow-lg md:h-80 p-4">

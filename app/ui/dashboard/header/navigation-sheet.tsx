@@ -6,18 +6,15 @@ import { NavMenu } from "./nav-menu";
 export const NavigationSheet = () => {
   return (
     <Sheet>
-      {" "}
-      <SheetTrigger asChild>
-        {" "}
+      <SheetTrigger>
         <Button variant="outline" size="icon">
-          {" "}
-          <Menu />{" "}
-        </Button>{" "}
-      </SheetTrigger>{" "}
+          <Menu />
+        </Button>
+      </SheetTrigger>
       <SheetContent>
-        {" "}
-        <Logo /> <NavMenu orientation="vertical" className="mt-12" />{" "}
-      </SheetContent>{" "}
+        <Logo />
+        <NavMenu orientation="vertical" className="mt-12" />{" "}
+      </SheetContent>
     </Sheet>
   );
 };

@@ -9,37 +9,27 @@ import Link from "next/link";
 
 export const NavMenu = (props: NavigationMenuProps) => (
   <NavigationMenu {...props}>
-    {" "}
     <NavigationMenuList className="gap-6 space-x-0 data-[orientation=vertical]:flex-col data-[orientation=vertical]:items-start">
-      {" "}
       <NavigationMenuItem>
-        {" "}
         <NavigationMenuLink asChild>
-          {" "}
-          <Link href="/products">Home</Link>{" "}
+          <Link href="/products">Home</Link>
         </NavigationMenuLink>{" "}
       </NavigationMenuItem>{" "}
       <NavigationMenuItem>
-        {" "}
         <NavigationMenuLink asChild>
-          {" "}
-          <Link href="/products/laptops">Laptops</Link>{" "}
-        </NavigationMenuLink>{" "}
-      </NavigationMenuItem>{" "}
+          <Link href="/products/laptops">Laptops</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
       <NavigationMenuItem>
-        {" "}
         <NavigationMenuLink asChild>
-          {" "}
-          <Link href="/products/smartphones">Smartphones</Link>{" "}
-        </NavigationMenuLink>{" "}
-      </NavigationMenuItem>{" "}
+          <Link href="/products/smartphones">Smartphones</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
       <NavigationMenuItem>
-        {" "}
         <NavigationMenuLink asChild>
-          {" "}
-          <Link href="/products/tablets">Tablets</Link>{" "}
-        </NavigationMenuLink>{" "}
-      </NavigationMenuItem>{" "}
-    </NavigationMenuList>{" "}
+          <Link href="/products/tablets">Tablets</Link>
+        </NavigationMenuLink>
+      </NavigationMenuItem>
+    </NavigationMenuList>
   </NavigationMenu>
 );

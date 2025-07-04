@@ -1,5 +1,3 @@
-"use client";
-
 import { fetchLatestProducts } from "@/app/lib/data";
 import { InfiniteMovingCards } from "@/app/ui/dashboard/infinite-moving-cards";
 import { BaseProduct } from "@/app/lib/types";

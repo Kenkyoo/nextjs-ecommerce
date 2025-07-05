@@ -8,22 +8,24 @@ import Header from "./header";
 export default function HeroPage() {
   return (
     <>
-      <div className="absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
+      <div className="hidden md:block absolute inset-y-0 left-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute top-0 h-40 w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
       </div>
-      <div className="absolute inset-y-0 right-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
+      <div className="hidden md:block absolute inset-y-0 right-0 h-full w-px bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute h-40 w-px bg-gradient-to-b from-transparent via-blue-500 to-transparent" />
       </div>
-      <div className="absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
+      <div className="hidden md:block absolute inset-x-0 bottom-0 h-px w-full bg-neutral-200/80 dark:bg-neutral-800/80">
         <div className="absolute mx-auto h-px w-40 bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
       </div>
-      <div className="px-4 py-10 md:py-20">
+      <div className="h-full px-4 py-4 md:py-8">
         <Heading />
         <HeroImage />
       </div>
-      <Features />
-      <Header />
-      <div className="relative flex h-[40rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
+      <div className="hidden md:block">
+        <Features />
+        <Header />
+      </div>
+      <div className="hidden md:flex relative h-[40rem] w-full overflow-hidden rounded-md bg-black/[0.96] antialiased md:items-center md:justify-center">
         <div
           className={cn(
             "pointer-events-none absolute inset-0 [background-size:40px_40px] select-none",

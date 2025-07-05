@@ -3,7 +3,6 @@ import { Logo } from "./logo";
 import { NavMenu } from "./nav-menu";
 import { NavigationSheet } from "./navigation-sheet";
 import { auth } from "@/auth";
-import { Separator } from "@/components/ui/separator";
 import { ModeToggle } from "@/components/toogle-mode";
 import AvatarUser from "./avatar";
 
@@ -15,9 +14,9 @@ export default async function Navbar({
   const session = await auth();
 
   return (
-    <div className="min-h-screen bg-base">
+    <div className="bg-base">
       <nav className="h-16 bg-background border-b">
-        <div className="h-full flex items-center justify-between max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="h-full flex items-center justify-between gap-4 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
           <Logo />
           <NavMenu className="hidden md:block" />
           <div className="flex items-center gap-3">
@@ -36,7 +35,6 @@ export default async function Navbar({
           </div>
         </div>
       </nav>
-      <Separator className="w-full my-4 border border-base-950" />
     </div>
   );
 }

@@ -7,7 +7,7 @@ export default async function InfiniteProducts() {
   const data = (await fetchLatestProducts()) as BaseProduct[];
 
   return (
-    <div className="h-[40rem] rounded-md flex flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
+    <div className="hidden md:flex h-[40rem] rounded-md flex-col antialiased bg-white dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards direction="right" speed="slow">
         {data.map((item) => (
           <li

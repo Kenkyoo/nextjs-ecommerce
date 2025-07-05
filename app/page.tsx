@@ -6,7 +6,7 @@ export default function Page() {
   return (
     <>
       <Banner />
-      <main className="min-h-screen relative mx-auto my-10 flex max-w-7xl flex-col items-center justify-center">
+      <main className="relative mx-auto my-2 flex max-w-7xl flex-col items-center justify-center">
         <Navbar />
         <HeroPage />
       </main>

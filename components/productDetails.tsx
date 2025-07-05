@@ -92,10 +92,10 @@ export default function ProductDetails({ product }: { product: BaseDetails }) {
               width={150}
               height={150}
               minScratchPercentage={70}
-              className="flex items-center justify-center overflow-hidden rounded-2xl border-2 bg-gray-100"
+              className="flex items-center justify-center overflow-hidden rounded-2xl border-2"
               gradientColors={["#A97CF8", "#F38CB8", "#FDCC92"]}
             >
-              <p className="text-base">% {product.discountPercentage}</p>
+              <p className="text-2xl">% {product.discountPercentage}</p>
             </ScratchToReveal>
             {/* Tags */}
             {product.tags.length > 0 && (
